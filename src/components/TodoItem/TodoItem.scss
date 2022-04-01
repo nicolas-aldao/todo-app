@@ -1,0 +1,26 @@
+.todoitem {
+    display: flex;
+    justify-content: center;
+}
+.todoitem__container {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1rem solid var(--plump-purple);
+    border-radius: 0.5rem;
+    width: 15rem;
+    min-height: 3rem;
+    margin: 1rem;
+    background-color: var(--plump-purple);
+    color: var(--white);
+    font-weight: 800;
+    font-size: var(--md);
+}
+.todoitem__span:hover {
+    cursor: pointer;
+}
+.todoitem__p {
+    display: inline;
+}
+.todoitem__completed {
+    text-decoration: line-through;
+}

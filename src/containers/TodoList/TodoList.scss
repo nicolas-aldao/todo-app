@@ -1,0 +1,18 @@
+@use "../../global";
+section > .todolist {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // background-color: aliceblue;
+  padding-left: 0rem;
+  
+}
+.textsize1 {
+  font-size: var(--sm);
+}
+.textsize2 {
+  font-size: var(--md);
+}
+.textsize3 {
+  font-size: var(--lg);
+}
