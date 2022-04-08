@@ -1,0 +1,53 @@
+@use "../../global";
+
+.section__add-todo-button {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  max-width: 737px;
+}
+.add-todo-button {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0;
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  color: var(--dark-liver);
+  transition: all 800ms ease-in-out;
+  left: 75%;
+}
+.add-todo-button:hover {
+  cursor: pointer;
+}
+.add-todo-button:hover {
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+  transform: rotate(360deg);
+}
+
+@media (min-width: 880px) {
+  .add-todo-button {
+    top: 15%;
+    left: 70%;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 4.7rem;
+  }
+}
+
+@media (min-width: 1070px) {
+  .add-todo-button {
+    left: 65%;
+  }
+}
+
+@media (min-width: 1434px) {
+  .add-todo-button {
+    left: 60%;
+  }
+}

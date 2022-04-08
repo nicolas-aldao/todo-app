@@ -5,16 +5,21 @@
 }
 
 .search__input-search {
-
   width: 15rem;
   height: 2rem;
   border-radius: 0.3rem;
   border: 0.1rem solid rgb(204, 201, 201);
   box-shadow:0.3rem;
+  font-size: 0.9rem;
+  padding-left: 1rem;
 }
 
 .search__input-search::-webkit-input-placeholder {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
     border: 0.1rem solid white;
+ }
+
+ .search__h3 {
+   margin-top: 0;
  }

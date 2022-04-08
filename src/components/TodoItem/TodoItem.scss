@@ -24,3 +24,18 @@
 .todoitem__completed {
     text-decoration: line-through;
 }
+
+.delete-icon:hover {
+    color: red;
+}
+
+.check-icon {
+    font-size: 1.7rem;
+    stroke: #439b4a;
+  stroke-width: 0.2rem;
+}
+
+.check-icon:hover {
+    stroke: #439b4a;
+  stroke-width: 0.5rem;
+}

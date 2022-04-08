@@ -1,0 +1,10 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 0.1rem solid salmon;
+    padding: 2rem;
+    z-index: 5;
+    opacity: 100%;
+    background-color: salmon;
+}
+// .form textarea:focus { outline: none; }

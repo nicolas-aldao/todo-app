@@ -1,10 +1,14 @@
 import React from "react";
-import './TodoCounter.scss';
+import { AppContext } from "../../context/AppContext";
+import "./TodoCounter.scss";
 
-const TodoCounter = ({todosTotal, completedTodos}) => {
+const TodoCounter = () => {
+  const { completedTodos, todosTotal } = React.useContext(AppContext);
   return (
     <section>
-      <h2 className="counter__title">You have completed {completedTodos}/{todosTotal} TODOs</h2>
+      <h1 className="counter__title">
+        You have completed {completedTodos}/{todosTotal} TODOs
+      </h1>
     </section>
   );
 };

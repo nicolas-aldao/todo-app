@@ -1,19 +1,22 @@
 import React from "react";
+import { AppContext } from "../../context/AppContext";
 import "./TodoSearch.scss";
 
-const TodoSearch = ({ props, searchValue, setSearchValue }) => {
+const TodoSearch = () => {
+  const { setSearchValue } = React.useContext(AppContext);
   const handleChangeValue = (e) => {
     setSearchValue(e.target.value);
   };
   return (
-    <section className="search">
-      <input
-        className="search__input-search"
-        placeholder="Onios"
-        type="text"
-        onChange={handleChangeValue}
-      />
-    </section>
+      <section className="search">
+        <h3 className="search__h3">Search a To Do</h3>
+        <input
+          className="search__input-search"
+          placeholder="Buy milk and eggs..."
+          type="text"
+          onChange={handleChangeValue}
+        />
+      </section>
   );
 };
 
