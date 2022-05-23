@@ -54,17 +54,6 @@ const UI = () => {
             ></FormAdd>
           </Modal>
         )}
-        <p className="textsize1">
-          Lorem ipsum dolor sit amet. Vel incidunt mollitia in officiis
-          laudantium id quasi fugit est voluptate corporis. Ad unde labore sit
-          sint voluptatibus qui mollitia fugiat non nesciunt consequuntur! Ex
-          sint cumque et nesciunt ullam in beatae nesciunt ea facere voluptas
-          rem neque similique in illum consequatur. Nam quis magni ea voluptatem
-          quia ad optio omnis sequi eaque At quis adipisci. Et rerum dicta qui
-          perferendis quam eum voluptatem dolores et quibusdam iusto.
-        </p>
-        <p className="textsize2">Lorem ipsum dolor sit amet</p>
-        <p className="textsize3">Lorem ipsum dolor sit amet</p>
       </Layout>
     </React.Fragment>
   );
