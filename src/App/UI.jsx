@@ -26,9 +26,9 @@ const UI = () => {
         <AppContext.Consumer>
           {({ showTodos, completeTodo, deleteTodo, error, loading }) => (
             <TodoList TODOs={showTodos}>
-              {error && <p>Desespérate, hubo un error...</p>}
-              {loading && <p>Estamos cargando, no desesperes...</p>}
-              {!loading && !showTodos.length && <p>¡Crea tu primer TODO!</p>}
+              {error && <p>Oops, there was a problem...</p>}
+              {loading && <p>Loading, wait please...</p>}
+              {!loading && !showTodos.length && <p>¡Create your first TODO!</p>}
               {showTodos.length > 0 &&
                 showTodos.map((todo) => (
                   <TodoItem
