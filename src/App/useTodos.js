@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import { useLocalStorage } from "./useLocalStorage";
+import { useState } from "react";
+import { useLocalStorage } from "../context/useLocalStorage";
 
-const AppContext = React.createContext();
-
-function AppContextProvider(props) {
+function useTodos() {
   const [searchValue, setSearchValue] = useState("");
   const [openModal, setOpenModal] = useState(false);
-  const { item: TODOs, saveItem: setTODOs, error, loading } = useLocalStorage("TODOs_V1", []);
+  const {
+    item: TODOs,
+    saveItem: setTODOs,
+    error,
+    loading,
+  } = useLocalStorage("TODOs_V1", []);
   const completedTodos = TODOs.filter((todo) => todo.completed).length;
   const todosTotal = TODOs.length;
   let showTodos = [];
+
   if (searchValue.length === 0) {
     showTodos = TODOs;
   } else {
@@ -19,6 +23,7 @@ function AppContextProvider(props) {
       return todoText.includes(searchText);
     });
   }
+
   const addTodo = (text) => {
     const newTodo = {
       text: text,
@@ -40,27 +45,22 @@ function AppContextProvider(props) {
     newTodosD.splice(todoIndex, 1);
     setTODOs(newTodosD);
   };
-  return (
-    <AppContext.Provider
-      value={{
-        todosTotal,
-        completedTodos,
-        searchValue,
-        setSearchValue,
-        showTodos,
-        TODOs,
-        completeTodo,
-        deleteTodo,
-        openModal,
-        setOpenModal,
-        addTodo,
-        error,
-        loading,
-      }}
-    >
-      {props.children}
-    </AppContext.Provider>
-  );
+
+  return {
+    todosTotal,
+    completedTodos,
+    searchValue,
+    setSearchValue,
+    showTodos,
+    TODOs,
+    completeTodo,
+    deleteTodo,
+    openModal,
+    setOpenModal,
+    addTodo,
+    error,
+    loading,
+  };
 }
 
-export { AppContext, AppContextProvider };
+export { useTodos };

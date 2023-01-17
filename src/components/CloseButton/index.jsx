@@ -1,9 +1,7 @@
 import React from "react";
-import { AppContext } from "../../context/AppContext";
 import "./CloseButton.scss";
 
-const CloseButton = () => {
-  const { openModal, setOpenModal } = React.useContext(AppContext);
+const CloseButton = ({ state: { openModal, setOpenModal } }) => {
   const handleClick = () => {
     setOpenModal(!openModal);
   };
@@ -14,4 +12,4 @@ const CloseButton = () => {
   );
 };
 
-export {CloseButton};
+export { CloseButton };
