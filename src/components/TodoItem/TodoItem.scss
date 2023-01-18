@@ -1,41 +1,40 @@
+@use "../../global";
+
 .todoitem {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .todoitem__container {
-    display: flex;
-    justify-content: space-between;
-    border: 0.1rem solid var(--plump-purple);
-    border-radius: 0.5rem;
-    width: 15rem;
-    min-height: 3rem;
-    margin: 1rem;
-    background-color: var(--plump-purple);
-    color: var(--white);
-    font-weight: 800;
-    font-size: var(--md);
+  display: flex;
+  justify-content: space-between;
+  border: 0.1rem solid var(--plump-purple);
+  border-radius: 0.5rem;
+  width: 15rem;
+  min-height: 3rem;
+  margin: 1rem;
+  background-color: var(--plump-purple);
+  color: var(--white);
+  font-weight: 800;
+  font-size: var(--md);
 }
-.todoitem__span:hover {
-    cursor: pointer;
-}
+
 .todoitem__p {
-    display: inline;
+  display: inline;
 }
 .todoitem__completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .delete-icon:hover {
-    color: red;
+  color: red;
 }
 
 .check-icon {
-    font-size: 1.7rem;
-    stroke: #439b4a;
+  font-size: 1.7rem;
+  stroke: #439b4a;
   stroke-width: 0.2rem;
 }
 
 .check-icon:hover {
-    stroke: #439b4a;
-  stroke-width: 0.5rem;
+  stroke: #7fd186;
 }

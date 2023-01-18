@@ -12,7 +12,6 @@ import { FormAdd } from "../containers/FormAdd";
 import { CreateTodoButton } from "../components/CreateTodoButton";
 // assets
 import ".././global.scss";
-import { CloseButton } from "../components/CloseButton";
 
 const App = () => {
   const {
@@ -22,11 +21,12 @@ const App = () => {
     error,
     loading,
     completedTodos,
-    todosTotal,
     setSearchValue,
     openModal,
     setOpenModal,
     addTodo,
+    totalTodos,
+    searchValue
   } = useTodos();
   const closeModal = () => {
     setOpenModal(!openModal);
@@ -34,30 +34,46 @@ const App = () => {
   return (
     <Layout className="layout">
       <>
-        <TodoCounter state={{ completedTodos, todosTotal }} />
+        <TodoCounter state={{ completedTodos, totalTodos }} />
         <TodoSearch state={{ setSearchValue }} />
-        <TodoList TODOs={showTodos}>
-          {error && <p>Oops, there was a problem...</p>}
-          {loading && <p>Loading, wait please...</p>}
-          {!loading && !showTodos.length && <p>¡Create your first TODO!</p>}
-          {showTodos.length > 0 &&
-            showTodos.map((todo) => (
-              <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onCompleted={() => completeTodo(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-              />
-            ))}
+        <TodoList
+          error={error}
+          loading={loading}
+          totalTodos={totalTodos}
+          searchedTodos={showTodos}
+          onError={() => <p>Oops, there was a problem...</p>}
+          onLoading={() => <p>Loading, wait please...</p>}
+          onEmptyTodos={() => <p>¡Create your first TODO!</p>}
+          searchText={searchValue}
+          onEmptySearchResults={(searchText) => (
+            <p>No hay resultados para '{searchText}'</p>
+          )}
+          // render={(todo) => (
+          //   <TodoItem
+          //     key={todo.text}
+          //     text={todo.text}
+          //     completed={todo.completed}
+          //     onComplete={() => completeTodo(todo.text)}
+          //     onDelete={() => deleteTodo(todo.text)}
+          //   />
+          // )}
+        >
+          {(todo) => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onComplete={() => completeTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          )}
         </TodoList>
       </>
       <CreateTodoButton state={{ openModal, setOpenModal }} />
       {openModal && (
         <Modal>
-          <CloseButton state={{openModal, setOpenModal}}/>
           <FormAdd
-            state={{ setOpenModal, addTodo }}
+            state={{ setOpenModal, addTodo, openModal }}
             onClose={() => closeModal()}
             title="Add todo"
             buttonAdd="add"

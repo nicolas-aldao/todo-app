@@ -1,24 +1,28 @@
+@use "../../global";
+
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .75);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-    outline: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  outline: none;
 }
 .modal-header {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  background-color: var(--plump-purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 0.7rem;
 }
-textarea:focus, input:focus{
-    outline: none;
+textarea:focus,
+input:focus {
+  outline: none;
 }

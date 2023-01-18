@@ -1,19 +1,20 @@
 import React from "react";
 import "./TodoList.scss";
 const TodoList = (props) => {
+  const renderFunc = props.children || props.render;
+
   return (
-    <section>
-      <ul className="todolist">
-        {/* {props.todos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onCompleted={()=> completeTodo(todo.text)}
-          />
-        ))} */}
-        {props.children}
-      </ul>
+    <section className="TodoList-container">
+      {props.error && props.onError()}
+      {props.loading && props.onLoading()}
+
+      {!props.loading && !props.totalTodos && props.onEmptyTodos()}
+
+      {!!props.totalTodos &&
+        !props.searchedTodos.length &&
+        props.onEmptySearchResults(props.searchText)}
+
+      {props.searchedTodos.map(renderFunc)}
     </section>
   );
 };

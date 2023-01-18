@@ -6,7 +6,7 @@ const CloseButton = ({ state: { openModal, setOpenModal } }) => {
     setOpenModal(!openModal);
   };
   return (
-    <button onClick={handleClick} className="close-button">
+    <button onClick={handleClick} className="close-button pointerOnHover">
       X
     </button>
   );

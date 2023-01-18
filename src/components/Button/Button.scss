@@ -1,0 +1,12 @@
+@use "../../global";
+
+.btn {
+    font-size: 0.8rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    color: var(--black);
+    background-color: var(--languid-lavender);
+    text-align: center;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}

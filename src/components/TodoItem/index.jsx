@@ -8,7 +8,7 @@ const TodoItem = (props) => {
   return (
     <li className="todoitem">
       <div className="todoitem__container">
-        <span className="todoitem__span" onClick={props.onCompleted}>
+        <span className="todoitem__span" onClick={props.onComplete}>
           <FcCheckmark className='check-icon' style={{}}/>
         </span>
         <p

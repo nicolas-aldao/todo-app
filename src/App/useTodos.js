@@ -11,7 +11,7 @@ function useTodos() {
     loading,
   } = useLocalStorage("TODOs_V1", []);
   const completedTodos = TODOs.filter((todo) => todo.completed).length;
-  const todosTotal = TODOs.length;
+  const totalTodos = TODOs.length;
   let showTodos = [];
 
   if (searchValue.length === 0) {
@@ -47,7 +47,7 @@ function useTodos() {
   };
 
   return {
-    todosTotal,
+    totalTodos,
     completedTodos,
     searchValue,
     setSearchValue,
