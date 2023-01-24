@@ -8,10 +8,14 @@ import { TodoList } from "../containers/TodoList";
 import { TodoItem } from "../components/TodoItem";
 import { Modal } from "../components/Modal";
 import { FormAdd } from "../containers/FormAdd";
+import { ChangeAlertWithStorageListener } from "../components/ChangeAlert";
 // components
 import { CreateTodoButton } from "../components/CreateTodoButton";
 // assets
 import ".././global.scss";
+
+// TODO: queda pendiente el reto del final de la clase:
+// https://platzi.com/clases/2457-react-patrones-render/40865-completando-el-storageeventlistener/
 
 const App = () => {
   const {
@@ -26,7 +30,8 @@ const App = () => {
     setOpenModal,
     addTodo,
     totalTodos,
-    searchValue
+    searchValue,
+    synchronizeTODOs
   } = useTodos();
   const closeModal = () => {
     setOpenModal(!openModal);
@@ -81,6 +86,7 @@ const App = () => {
           ></FormAdd>
         </Modal>
       )}
+      <ChangeAlertWithStorageListener synchronize={synchronizeTODOs}/>
     </Layout>
   );
 };
