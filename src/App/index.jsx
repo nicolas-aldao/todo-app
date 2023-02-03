@@ -31,7 +31,7 @@ const App = () => {
     addTodo,
     totalTodos,
     searchValue,
-    synchronizeTODOs
+    synchronizeTODOs,
   } = useTodos();
   const closeModal = () => {
     setOpenModal(!openModal);
@@ -41,27 +41,18 @@ const App = () => {
       <>
         <TodoCounter state={{ completedTodos, totalTodos }} />
         <TodoSearch state={{ setSearchValue }} />
-        <TodoList
-          error={error}
+        <TodoList // RENDER PROPS, we separate validation from components, the validation is inside this component
+          error={error} // We can put our variables
           loading={loading}
           totalTodos={totalTodos}
           searchedTodos={showTodos}
-          onError={() => <p>Oops, there was a problem...</p>}
+          onError={() => <p>Oops, there was a problem...</p>} // We can put our components
           onLoading={() => <p>Loading, wait please...</p>}
           onEmptyTodos={() => <p>¡Create your first TODO!</p>}
           searchText={searchValue}
           onEmptySearchResults={(searchText) => (
             <p>No hay resultados para '{searchText}'</p>
           )}
-          // render={(todo) => (
-          //   <TodoItem
-          //     key={todo.text}
-          //     text={todo.text}
-          //     completed={todo.completed}
-          //     onComplete={() => completeTodo(todo.text)}
-          //     onDelete={() => deleteTodo(todo.text)}
-          //   />
-          // )}
         >
           {(todo) => (
             <TodoItem
@@ -86,7 +77,8 @@ const App = () => {
           ></FormAdd>
         </Modal>
       )}
-      <ChangeAlertWithStorageListener synchronize={synchronizeTODOs}/>
+      {/* HOC */}
+      <ChangeAlertWithStorageListener synchronize={synchronizeTODOs} />
     </Layout>
   );
 };

@@ -7,8 +7,10 @@
 .todoitem__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
   border: 0.1rem solid var(--plump-purple);
-  border-radius: 0.5rem;
+  border-radius: 0.1rem;
   width: 15rem;
   min-height: 3rem;
   margin: 1rem;
@@ -16,25 +18,56 @@
   color: var(--white);
   font-weight: 800;
   font-size: var(--md);
+  text-align: center;
 }
 
 .todoitem__p {
   display: inline;
+  // border: solid;
+  padding: 0 1rem;
 }
 .todoitem__completed {
   text-decoration: line-through;
 }
 
+.todoitem__span {
+  height: 2.5rem;
+}
+
+.delete-icon {
+  font-size: 1.7rem;
+  color: black;
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 5rem;
+}
+
 .delete-icon:hover {
-  color: red;
+  cursor: pointer;
+  color: white;
+  background-color: red;
 }
 
 .check-icon {
   font-size: 1.7rem;
   stroke: #439b4a;
   stroke-width: 0.2rem;
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 5rem;
 }
 
 .check-icon:hover {
-  stroke: #7fd186;
+  cursor: pointer;
+  background-color: #439b4a;
+  stroke: white;
+}
+
+.checkIconCompleted {
+  background-color: #439b4a;
+  stroke: white;
+}
+
+.checkIconCompleted:hover {
+  cursor: default;
 }

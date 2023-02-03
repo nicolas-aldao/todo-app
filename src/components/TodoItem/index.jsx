@@ -9,7 +9,12 @@ const TodoItem = (props) => {
     <li className="todoitem">
       <div className="todoitem__container">
         <span className="todoitem__span" onClick={props.onComplete}>
-          <FcCheckmark className='check-icon' style={{}}/>
+          <FcCheckmark
+            className={`check-icon ${
+              props.completed ? "checkIconCompleted" : ""
+            }`}
+            style={{}}
+          />
         </span>
         <p
           className={`todoitem__p ${
@@ -19,7 +24,7 @@ const TodoItem = (props) => {
           {props.text}
         </p>
         <span className="todoitem__span" onClick={props.onDelete}>
-          <IoTrashOutline className='delete-icon'/>
+          <IoTrashOutline className="delete-icon" />
         </span>
       </div>
     </li>

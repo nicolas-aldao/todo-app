@@ -29,14 +29,22 @@ const FormAdd = ({
       </div>
       <form className="form" onSubmit={onSubmit}>
         <textarea
-          className="text-area"
+          className={`text-area ${
+            newTODOValue.length === 25 ? "text-area-error" : ""
+          }`}
           onChange={onChange}
           placeholder={placeholder}
+          maxLength={25}
         ></textarea>
         <div className="form-buttons">
           <Button onClick={onCancel} text={"Cancel"} />
           <Button isSubmit onClick={onSubmit} text={buttonAdd} />
         </div>
+        {newTODOValue.length === 25 ? (
+          <label className="text-area-warning">Max characters reached.</label>
+        ) : (
+          ""
+        )}
       </form>
     </>
   );
