@@ -23,7 +23,6 @@
 
 .todoitem__p {
   display: inline;
-  // border: solid;
   padding: 0 1rem;
 }
 .todoitem__completed {
@@ -70,4 +69,18 @@
 
 .checkIconCompleted:hover {
   cursor: default;
+}
+
+.svgContainer {
+  border: solid red 4px;
+  polygon {
+    fill: white;
+  }
+}
+
+.svgContainerChecked {
+  border: solid red 4px;
+  polygon {
+    fill: #439b4a;
+  }
 }

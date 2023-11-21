@@ -9,12 +9,19 @@ const TodoItem = (props) => {
     <li className="todoitem">
       <div className="todoitem__container">
         <span className="todoitem__span" onClick={props.onComplete}>
-          <FcCheckmark
+          {props.completed ? (
+            <FcCheckmark
+              className={"check-icon checkIconCompleted svgContainerChecked"}
+            />
+          ) : (
+            <FcCheckmark className={"check-icon svgContainer"} />
+          )}
+          {/* <FcCheckmark
             className={`check-icon ${
               props.completed ? "checkIconCompleted" : ""
             }`}
             style={{}}
-          />
+          /> */}
         </span>
         <p
           className={`todoitem__p ${
